@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlaylistDetails">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="2dp">
+
+        <ImageButton
+            android:id="@+id/backBtnPD"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_back_icon"
+            android:contentDescription="@string/back_btn"
+            android:backgroundTint="@android:color/transparent"
+            app:tint="@color/black"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/playlistNamePD"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/playlist_btn"
+            android:gravity="center"
+            android:text="@string/playlist_btn"
+            android:textColor="@color/orange"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:singleLine="true"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDetails"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"
+
+        android:layout_marginTop="10dp">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/playlistImgPD"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/music_splash_screen"/>
+        <TextView
+            android:id="@+id/moreInfoPD"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/playlistname"
+            android:gravity="center|start"
+            android:layout_marginHorizontal="5dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/playlistDetailsRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutDetails"
+        android:scrollbarThumbVertical="@drawable/ic_scrollbar"
+        android:scrollbars="vertical"
+        android:paddingBottom="280dp"
+        android:layout_marginTop="10dp"/>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/shufflebtnPD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ic_add"
+        app:iconSize="35dp"
+        android:backgroundTint="@color/white"
+        app:iconTint="@color/orange"
+        app:strokeWidth="2dp"
+        app:strokeColor="@color/orange"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9"
+        android:visibility="invisible"
+        />
+
+
+    <!--for buttons-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+    <!--Add Button-->
+    <Button
+        android:id="@+id/addBtnPD"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:contentDescription="@string/add_songs"
+        android:drawableLeft="@drawable/ic_add"
+        android:text="@string/add_songs"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        tools:ignore="MissingConstraints,RtlHardcoded" />
+
+        <!--Remove Button-->
+        <Button
+            android:id="@+id/removeAllPD"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:contentDescription="@string/remove"
+            android:drawableLeft="@drawable/ic_baseline_delete_24"
+            android:text="@string/removetxt"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            tools:ignore="RtlHardcoded" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
