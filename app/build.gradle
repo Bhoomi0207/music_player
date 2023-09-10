@@ -51,5 +51,6 @@ dependencies {
     // for notification
     implementation "androidx.media:media:1.6.0"
     implementation 'com.google.code.gson:gson:2.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
 
 }
